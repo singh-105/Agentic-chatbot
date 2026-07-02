@@ -15,7 +15,7 @@ Nothing gets saved between sessions — every time you refresh, it starts fresh.
 ## Tech stack
 
 | Tool | What it does here |
-|------|-------------------|
+|------|--------------------|
 | **Streamlit** | Creates the chat UI in the browser |
 | **LangGraph** | Manages the flow of messages (state → node → response) |
 | **LangChain** | Connects LangGraph to the Groq API |
@@ -28,35 +28,26 @@ Nothing gets saved between sessions — every time you refresh, it starts fresh.
 
 ```
 BAsicChatbot/
-│
-├── app.py                          ← Run this to start the app
-├── requirements.txt                ← All Python packages needed
-│
-└── src/
+├── app.py                              → Run this to start the app
+├── requirements.txt                    → All Python packages needed
+├── src/
     └── langgraphagenticai/
-        │
-        ├── main.py                 ← The "brain" — wires UI + LLM + graph together
-        │
+        ├── main.py                         → The "brain" — wires UI + LLM + graph together
         ├── LLMS/
-        │   └── groqllm.py          ← Connects to Groq using your API key
-        │
+        │   └── groqllm.py                  → Connects to Groq using your API key
         ├── state/
-        │   └── state.py            ← Defines what "memory" the graph carries (message list)
-        │
+        │   └── state.py                    → Defines what "memory" the graph carries (message list)
         ├── graph/
-        │   └── graph_builder.py    ← Builds the LangGraph flow (START → chatbot → END)
-        │
+        │   └── graph_builder.py    → Builds the LangGraph flow (START → chatbot → END)
         ├── nodes/
-        │   └── basic_chatbot_node.py  ← The actual node that calls the LLM
-        │
-        ├── tools/                  ← Empty for now, placeholder for future tools
-        │
+        │   └── basic_chatbot_node.py  → The actual node that calls the LLM
+        ├── tools/                          → Empty for now, placeholder for future tools
         └── ui/
-            ├── uiconfigfile.ini    ← Config file — models, use cases, page title
-            ├── uiconfigfile.py     ← Reads the .ini config
+            ├── uiconfigfile.ini    → Config file — models, use cases, page title
+            ├── uiconfigfile.py     → Reads the .ini config
             └── streamlitui/
-                ├── loadui.py       ← Renders the sidebar (API key input, model picker)
-                └── display_result.py  ← Shows the AI response in the chat window
+                ├── loadui.py       → Renders the sidebar (API key input, model picker)
+                └── display_result.py  → Shows the AI response in the chat window
 ```
 
 ---
@@ -168,8 +159,19 @@ langgraph
 langchain_community
 langchain_core
 langchain_groq
-langchain_openai     ← installed but not used yet
-faiss-cpu            ← for vector search (future use)
+langchain_openai     → installed but not used yet
+faiss-cpu            → for vector search (future use)
 streamlit
-tavily-python        ← for web search tool (future use)
+tavily-python        → for web search tool (future use)
 ```
+
+---
+
+## 👨‍💻 About the Developer
+
+Built by **Harsh M Singh** — B.Tech CSE (Data Science), Lokmanya Tilak College of Engineering, Mumbai.
+
+- 🔗 GitHub: [github.com/singh-105](https://github.com/singh-105)
+- 💼 AI Intern @ Deep Cytes
+
+Feel free to connect, star the repo, or open an issue!
